@@ -1,41 +1,65 @@
 {
   "kind": "declarative",
   "id": "gallery",
-  "name": "Gallery",
-  "version": "1.2.3",
-  "coreApi": "^1.7.0",
-  "description": "Photo gallery with street/studio tagging, admin collection view, and public list/detail pages.",
+  "name": {
+    "en": "Gallery",
+    "zh-Hant": "相片集"
+  },
+  "version": "1.2.4",
+  "coreApi": "^1.17.0",
+  "description": {
+    "en": "Photo gallery with street/studio tagging, admin collection view, and public list/detail pages.",
+    "zh-Hant": "帶有街景/棚拍標籤、管理者集合檢視和公開列表/詳細內容頁面的相片集。"
+  },
   "contentTypes": [
     {
       "name": "item",
-      "label": "Gallery item",
+      "label": {
+        "en": "Gallery item",
+        "zh-Hant": "相片"
+      },
       "slugField": "title",
       "fields": [
         {
           "key": "title",
           "type": "text",
           "required": true,
-          "label": "Title"
+          "label": {
+            "en": "Title",
+            "zh-Hant": "標題"
+          }
         },
         {
           "key": "image",
           "type": "media",
-          "label": "Image"
+          "label": {
+            "en": "Image",
+            "zh-Hant": "相片"
+          }
         },
         {
           "key": "body",
           "type": "richtext",
-          "label": "Body"
+          "label": {
+            "en": "Body",
+            "zh-Hant": "內文"
+          }
         },
         {
           "key": "shotAt",
           "type": "date",
-          "label": "Shot at"
+          "label": {
+            "en": "Shot at",
+            "zh-Hant": "拍攝時間"
+          }
         },
         {
           "key": "tag",
           "type": "select",
-          "label": "Tag",
+          "label": {
+            "en": "Tag",
+            "zh-Hant": "標籤"
+          },
           "options": [
             "street",
             "studio"
@@ -47,8 +71,14 @@
   "settings": [
     {
       "key": "perPage",
-      "label": "Items per page",
-      "description": "Number of gallery items shown per page on the public list view.",
+      "label": {
+        "en": "Items per page",
+        "zh-Hant": "每頁相片數"
+      },
+      "description": {
+        "en": "Number of gallery items shown per page on the public list view.",
+        "zh-Hant": "公開列表檢視中每頁顯示的相片數量。"
+      },
       "type": "number",
       "default": 12
     }
@@ -56,7 +86,10 @@
   "adminPages": [
     {
       "slug": "",
-      "title": "Gallery",
+      "title": {
+        "en": "Gallery",
+        "zh-Hant": "相片集"
+      },
       "view": "collection",
       "contentType": "item",
       "layout": "grid"

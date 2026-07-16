@@ -1,10 +1,16 @@
 {
   "kind": "declarative",
   "id": "line-login",
-  "name": "LINE Login",
-  "version": "1.0.0",
-  "coreApi": "^1.16.0",
-  "description": "Sign in with LINE (OIDC). The email scope requires LINE review; without it users get a placeholder address and can add a real one later.",
+  "name": {
+    "en": "LINE Login",
+    "zh-Hant": "LINE 登入"
+  },
+  "version": "1.0.1",
+  "coreApi": "^1.17.0",
+  "description": {
+    "en": "Sign in with LINE (OIDC). The email scope requires LINE review; without it users get a placeholder address and can add a real one later.",
+    "zh-Hant": "使用 LINE 登入 (OIDC)。Email 範圍需要 LINE 審核;未經審核時使用者會取得預留位置地址,之後可新增真實地址。"
+  },
   "author": { "name": "kuosuko" },
   "license": "MIT",
   "category": "integration",
@@ -24,15 +30,27 @@
   "settings": [
     {
       "key": "clientId",
-      "label": "Channel ID",
-      "description": "LINE Login channel ID from the LINE Developers console.",
+      "label": {
+        "en": "Channel ID",
+        "zh-Hant": "頻道 ID"
+      },
+      "description": {
+        "en": "LINE Login channel ID from the LINE Developers console.",
+        "zh-Hant": "來自 LINE Developers 主控台的 LINE Login 頻道 ID。"
+      },
       "type": "text",
       "default": ""
     },
     {
       "key": "clientSecret",
-      "label": "Channel secret",
-      "description": "LINE Login channel secret. Stored encrypted.",
+      "label": {
+        "en": "Channel secret",
+        "zh-Hant": "頻道密鑰"
+      },
+      "description": {
+        "en": "LINE Login channel secret. Stored encrypted.",
+        "zh-Hant": "LINE Login 頻道密鑰。加密儲存。"
+      },
       "type": "text",
       "secret": true,
       "default": ""

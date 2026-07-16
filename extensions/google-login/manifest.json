@@ -1,10 +1,16 @@
 {
   "kind": "declarative",
   "id": "google-login",
-  "name": "Google Login",
-  "version": "1.0.0",
-  "coreApi": "^1.16.0",
-  "description": "Sign in with Google (OIDC). Unlinked identities register as guest; existing users can link from their account page.",
+  "name": {
+    "en": "Google Login",
+    "zh-Hant": "Google 登入"
+  },
+  "version": "1.0.1",
+  "coreApi": "^1.17.0",
+  "description": {
+    "en": "Sign in with Google (OIDC). Unlinked identities register as guest; existing users can link from their account page.",
+    "zh-Hant": "使用 Google 登入 (OIDC)。未連結的身分會註冊為訪客;現有使用者可在帳戶頁面連結。"
+  },
   "author": { "name": "kuosuko" },
   "license": "MIT",
   "category": "integration",
@@ -23,15 +29,27 @@
   "settings": [
     {
       "key": "clientId",
-      "label": "Client ID",
-      "description": "OAuth 2.0 Client ID from the Google Cloud console.",
+      "label": {
+        "en": "Client ID",
+        "zh-Hant": "用戶端 ID"
+      },
+      "description": {
+        "en": "OAuth 2.0 Client ID from the Google Cloud console.",
+        "zh-Hant": "來自 Google Cloud 主控台的 OAuth 2.0 用戶端 ID。"
+      },
       "type": "text",
       "default": ""
     },
     {
       "key": "clientSecret",
-      "label": "Client secret",
-      "description": "OAuth 2.0 Client secret. Stored encrypted.",
+      "label": {
+        "en": "Client secret",
+        "zh-Hant": "用戶端密鑰"
+      },
+      "description": {
+        "en": "OAuth 2.0 Client secret. Stored encrypted.",
+        "zh-Hant": "OAuth 2.0 用戶端密鑰。加密儲存。"
+      },
       "type": "text",
       "secret": true,
       "default": ""
