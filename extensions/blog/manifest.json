@@ -1,0 +1,161 @@
+{
+  "kind": "declarative",
+  "id": "blog",
+  "name": "Blog",
+  "version": "1.2.3",
+  "coreApi": "^1.7.0",
+  "description": "Declarative port of the code `posts` extension: draft/published blog posts with public list + detail pages, running on the generic content engine.",
+  "icon": "file-text",
+  "og": {
+    "image": {
+      "template": "blog",
+      "brand": "Suko"
+    }
+  },
+  "contentTypes": [
+    {
+      "name": "post",
+      "label": "Post",
+      "slugField": "title",
+      "fields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "key": "slug",
+          "type": "slug",
+          "label": "Slug"
+        },
+        {
+          "key": "excerpt",
+          "type": "text",
+          "label": "Excerpt"
+        },
+        {
+          "key": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "key": "cover",
+          "type": "media",
+          "label": "Cover image"
+        },
+        {
+          "key": "author",
+          "type": "text",
+          "label": "Author"
+        },
+        {
+          "key": "publishedAt",
+          "type": "date",
+          "label": "Published"
+        }
+      ],
+      "layout": {
+        "kind": "manual",
+        "groups": [
+          {
+            "fields": [
+              "title"
+            ]
+          },
+          {
+            "fields": [
+              "slug",
+              "excerpt"
+            ]
+          },
+          {
+            "fields": [
+              "author",
+              "publishedAt"
+            ]
+          },
+          {
+            "fields": [
+              "cover"
+            ],
+            "fullWidth": true
+          },
+          {
+            "fields": [
+              "body"
+            ],
+            "fullWidth": true
+          }
+        ],
+        "wide": []
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "perPage",
+      "label": "Posts per page",
+      "type": "number",
+      "default": 10
+    },
+    {
+      "key": "showAuthor",
+      "label": "Show author",
+      "type": "boolean",
+      "default": true
+    }
+  ],
+  "adminPages": [
+    {
+      "slug": "",
+      "title": "Posts",
+      "view": "collection",
+      "contentType": "post",
+      "layout": "table"
+    }
+  ],
+  "publicRoutes": [
+    {
+      "pattern": "/blog",
+      "view": "list",
+      "contentType": "post",
+      "layout": "stacked"
+    },
+    {
+      "pattern": "/blog/:slug",
+      "view": "detail",
+      "contentType": "post"
+    }
+  ],
+  "author": {
+    "name": "kuosuko",
+    "url": "https://suko.tw"
+  },
+  "repository": "https://github.com/kuosuko/registry",
+  "license": "MIT",
+  "category": "content",
+  "tags": [
+    "blog",
+    "posts",
+    "publishing",
+    "og-image"
+  ],
+  "deployment": "instant",
+  "capabilities": [
+    "contents",
+    "media",
+    "og-image",
+    "settings",
+    "admin-pages",
+    "public-routes"
+  ],
+  "requires": [
+    {
+      "capability": "cron:tick",
+      "optional": true,
+      "reason": "Minute-precision scheduled publishing (core lazy sweep remains the fallback)"
+    }
+  ],
+  "iconUrl": "icon.png"
+}

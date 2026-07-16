@@ -1,0 +1,99 @@
+{
+  "kind": "declarative",
+  "id": "gallery",
+  "name": "Gallery",
+  "version": "1.2.3",
+  "coreApi": "^1.7.0",
+  "description": "Photo gallery with street/studio tagging, admin collection view, and public list/detail pages.",
+  "contentTypes": [
+    {
+      "name": "item",
+      "label": "Gallery item",
+      "slugField": "title",
+      "fields": [
+        {
+          "key": "title",
+          "type": "text",
+          "required": true,
+          "label": "Title"
+        },
+        {
+          "key": "image",
+          "type": "media",
+          "label": "Image"
+        },
+        {
+          "key": "body",
+          "type": "richtext",
+          "label": "Body"
+        },
+        {
+          "key": "shotAt",
+          "type": "date",
+          "label": "Shot at"
+        },
+        {
+          "key": "tag",
+          "type": "select",
+          "label": "Tag",
+          "options": [
+            "street",
+            "studio"
+          ]
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "key": "perPage",
+      "label": "Items per page",
+      "description": "Number of gallery items shown per page on the public list view.",
+      "type": "number",
+      "default": 12
+    }
+  ],
+  "adminPages": [
+    {
+      "slug": "",
+      "title": "Gallery",
+      "view": "collection",
+      "contentType": "item",
+      "layout": "grid"
+    }
+  ],
+  "publicRoutes": [
+    {
+      "pattern": "/gallery",
+      "view": "list",
+      "contentType": "item",
+      "layout": "grid"
+    },
+    {
+      "pattern": "/gallery/:slug",
+      "view": "detail",
+      "contentType": "item"
+    }
+  ],
+  "author": {
+    "name": "kuosuko",
+    "url": "https://suko.tw"
+  },
+  "repository": "https://github.com/kuosuko/registry",
+  "license": "MIT",
+  "category": "media",
+  "tags": [
+    "gallery",
+    "photos",
+    "portfolio"
+  ],
+  "deployment": "instant",
+  "capabilities": [
+    "contents",
+    "media",
+    "settings",
+    "admin-pages",
+    "public-routes"
+  ],
+  "iconUrl": "icon.png"
+}

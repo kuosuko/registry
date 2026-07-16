@@ -1,0 +1,167 @@
+{
+  "extensions": [
+    {
+      "id": "gallery",
+      "kind": "declarative",
+      "name": "Gallery",
+      "version": "1.2.3",
+      "coreApi": "^1.7.0",
+      "description": "Photo gallery with street/studio tagging, admin collection view, and public list/detail pages.",
+      "author": "kuosuko",
+      "license": "MIT",
+      "category": "media",
+      "tags": [
+        "gallery",
+        "photos",
+        "portfolio"
+      ],
+      "deployment": "instant",
+      "repository": "https://github.com/kuosuko/registry",
+      "capabilities": [
+        "contents",
+        "media",
+        "settings",
+        "admin-pages",
+        "public-routes"
+      ],
+      "iconUrl": "icon.png"
+    },
+    {
+      "id": "blog",
+      "kind": "declarative",
+      "name": "Blog",
+      "version": "1.2.3",
+      "coreApi": "^1.7.0",
+      "description": "Declarative port of the code `posts` extension: draft/published blog posts with public list + detail pages and OG images, running on the generic content engine.",
+      "author": "kuosuko",
+      "license": "MIT",
+      "category": "content",
+      "tags": [
+        "blog",
+        "posts",
+        "publishing",
+        "og-image"
+      ],
+      "deployment": "instant",
+      "repository": "https://github.com/kuosuko/registry",
+      "capabilities": [
+        "contents",
+        "media",
+        "og-image",
+        "settings",
+        "admin-pages",
+        "public-routes"
+      ],
+      "iconUrl": "icon.png",
+      "requires": [
+        {
+          "capability": "cron:tick",
+          "optional": true,
+          "reason": "Minute-precision scheduled publishing (core lazy sweep remains the fallback)"
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "kind": "declarative",
+      "name": "Contact",
+      "version": "1.3.2",
+      "coreApi": "^1.7.0",
+      "description": "有任何問題歡迎留言,我們會盡快回覆。",
+      "author": "kuosuko",
+      "license": "MIT",
+      "category": "content",
+      "tags": [
+        "contact",
+        "form",
+        "email",
+        "webhook"
+      ],
+      "deployment": "instant",
+      "repository": "https://github.com/kuosuko/registry",
+      "capabilities": [
+        "contents",
+        "public-create",
+        "webhooks",
+        "settings",
+        "admin-pages",
+        "public-routes"
+      ],
+      "iconUrl": "icon.png"
+    },
+    {
+      "id": "cron",
+      "kind": "code",
+      "name": "Cron",
+      "version": "1.0.0",
+      "coreApi": "^1.0.0",
+      "description": "分鐘級準時排程入口:外部 companion worker 以簽章回呼催動 core 的到期任務掃描。",
+      "author": "kuosuko",
+      "license": "MIT",
+      "category": "utility",
+      "tags": [
+        "cron",
+        "scheduling",
+        "jobs"
+      ],
+      "deployment": "code-only",
+      "repository": "https://github.com/kuosuko/registry"
+    },
+    {
+      "id": "google-login",
+      "kind": "declarative",
+      "name": "Google Login",
+      "version": "1.0.0",
+      "coreApi": "^1.16.0",
+      "description": "Sign in with Google (OIDC). Unlinked identities register as guest; existing users can link from their account page.",
+      "author": "kuosuko",
+      "license": "MIT",
+      "category": "integration",
+      "tags": [
+        "auth",
+        "login",
+        "oidc",
+        "google"
+      ],
+      "deployment": "instant",
+      "repository": "https://github.com/kuosuko/registry"
+    },
+    {
+      "id": "line-login",
+      "kind": "declarative",
+      "name": "LINE Login",
+      "version": "1.0.0",
+      "coreApi": "^1.16.0",
+      "description": "Sign in with LINE (OIDC). The email scope requires LINE review; without it users get a placeholder address and can add a real one later.",
+      "author": "kuosuko",
+      "license": "MIT",
+      "category": "integration",
+      "tags": [
+        "auth",
+        "login",
+        "oidc",
+        "line"
+      ],
+      "deployment": "instant",
+      "repository": "https://github.com/kuosuko/registry"
+    },
+    {
+      "id": "newebpay",
+      "kind": "code",
+      "name": "NewebPay 藍新金流",
+      "version": "0.1.0",
+      "coreApi": "^1.14.0",
+      "description": "藍新金流(NewebPay MPG)payment provider:測試/正式雙環境、MPG form-post checkout、Notify 驗簽冪等結算、ReturnURL 結果頁。掛在 core payment-kit 引擎上的 adapter。",
+      "author": "kuosuko",
+      "license": "MIT",
+      "category": "commerce",
+      "tags": [
+        "payment",
+        "newebpay",
+        "taiwan"
+      ],
+      "deployment": "code-only",
+      "repository": "https://github.com/kuosuko/registry"
+    }
+  ]
+}

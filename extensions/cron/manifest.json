@@ -1,0 +1,22 @@
+{
+  "kind": "code",
+  "id": "cron",
+  "name": "Cron",
+  "version": "1.0.0",
+  "coreApi": "^1.0.0",
+  "description": "分鐘級準時排程入口:外部 companion worker 以簽章回呼催動 core 的到期任務掃描。",
+  "install": "npx suko add cron",
+  "author": {
+    "name": "kuosuko",
+    "url": "https://suko.tw"
+  },
+  "repository": "https://github.com/kuosuko/registry",
+  "license": "MIT",
+  "category": "utility",
+  "tags": [
+    "cron",
+    "scheduling",
+    "jobs"
+  ],
+  "deployment": "code-only"
+}

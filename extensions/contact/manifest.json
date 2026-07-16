@@ -1,0 +1,119 @@
+{
+  "kind": "declarative",
+  "id": "contact",
+  "name": "Contact",
+  "version": "1.3.2",
+  "coreApi": "^1.11.0",
+  "description": "有任何問題歡迎留言,我們會盡快回覆。",
+  "icon": "mail",
+  "contentTypes": [
+    {
+      "name": "submission",
+      "label": "聯絡我們",
+      "slugField": "email",
+      "public": true,
+      "fields": [
+        {
+          "key": "name",
+          "type": "text",
+          "label": "姓名",
+          "required": true
+        },
+        {
+          "key": "email",
+          "type": "text",
+          "label": "Email",
+          "required": true
+        },
+        {
+          "key": "message",
+          "type": "text",
+          "label": "訊息",
+          "required": true
+        }
+      ],
+      "notifyOnCreate": true
+    }
+  ],
+  "adminPages": [
+    {
+      "slug": "",
+      "title": "聯絡我們",
+      "view": "collection",
+      "contentType": "submission",
+      "layout": "table"
+    }
+  ],
+  "publicRoutes": [
+    {
+      "pattern": "/contact",
+      "view": "form",
+      "contentType": "submission",
+      "success": {
+        "message": "收到你的訊息了,我們會盡快回覆,謝謝!"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "webhookSecret",
+      "label": "Webhook 簽章密鑰",
+      "description": "content:created webhook 的 HMAC-SHA256 簽章密鑰(可選;留空則不簽署)。",
+      "type": "text",
+      "default": "",
+      "secret": true
+    }
+  ],
+  "on": {
+    "content:created": [
+      {
+        "action": "webhook",
+        "url": "https://hooks.example.com/REPLACE_WITH_YOUR_ENDPOINT",
+        "secretSetting": "webhookSecret"
+      }
+    ]
+  },
+  "author": {
+    "name": "kuosuko",
+    "url": "https://suko.tw"
+  },
+  "repository": "https://github.com/kuosuko/registry",
+  "license": "MIT",
+  "category": "content",
+  "tags": [
+    "contact",
+    "form",
+    "email",
+    "webhook"
+  ],
+  "deployment": "instant",
+  "capabilities": [
+    "contents",
+    "public-create",
+    "webhooks",
+    "settings",
+    "admin-pages",
+    "public-routes"
+  ],
+  "installPrompts": [
+    {
+      "key": "webhookSecret",
+      "label": "Webhook 簽章密鑰",
+      "type": "text",
+      "secret": true,
+      "description": "content:created webhook 的 HMAC-SHA256 簽章密鑰(可選;留空則不簽署,之後可在 Settings 補)。"
+    }
+  ],
+  "iconUrl": "icon.png",
+  "schedule": [
+    {
+      "id": "purge-old-submissions",
+      "every": 1440,
+      "action": {
+        "op": "deleteOlderThan",
+        "contentType": "submission",
+        "days": 180
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "declarative",
+  "id": "google-login",
+  "name": "Google Login",
+  "version": "1.0.0",
+  "coreApi": "^1.16.0",
+  "description": "Sign in with Google (OIDC). Unlinked identities register as guest; existing users can link from their account page.",
+  "author": { "name": "kuosuko" },
+  "license": "MIT",
+  "category": "integration",
+  "tags": ["auth", "login", "oidc", "google"],
+  "deployment": "instant",
+  "repository": "https://github.com/kuosuko/registry",
+  "loginProvider": {
+    "issuer": "https://accounts.google.com",
+    "button": {
+      "label": "使用 Google 繼續",
+      "svg": "<svg viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#EA4335\" d=\"M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.6 30.2 0 24 0 14.6 0 6.4 5.4 2.5 13.3l7.8 6c1.9-5.6 7.1-9.8 13.7-9.8z\"/><path fill=\"#4285F4\" d=\"M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.1 5.3-4.6 7l7.1 5.5c4.1-3.8 6.5-9.5 6.5-16z\"/><path fill=\"#FBBC05\" d=\"M10.3 28.7c-.5-1.4-.8-2.9-.8-4.7s.3-3.3.8-4.7l-7.8-6C.9 16.5 0 20.1 0 24s.9 7.5 2.5 10.7l7.8-6z\"/><path fill=\"#34A853\" d=\"M24 48c6.2 0 11.4-2 15.2-5.5l-7.1-5.5c-2 1.3-4.6 2.1-8.1 2.1-6.6 0-11.8-4.2-13.7-9.8l-7.8 6C6.4 42.6 14.6 48 24 48z\"/></svg>",
+      "background": "#ffffff",
+      "foreground": "#1f1f1f"
+    }
+  },
+  "settings": [
+    {
+      "key": "clientId",
+      "label": "Client ID",
+      "description": "OAuth 2.0 Client ID from the Google Cloud console.",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "key": "clientSecret",
+      "label": "Client secret",
+      "description": "OAuth 2.0 Client secret. Stored encrypted.",
+      "type": "text",
+      "secret": true,
+      "default": ""
+    }
+  ]
+}
